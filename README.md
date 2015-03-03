@@ -1,6 +1,6 @@
 # JiS
 -------
-JiS is “Image is a slider for a framework JQuery”
+JiS is “Image is a slider for a framework JQuery” [Check out the demo](https://demorfi.github.io/jis)
 
 Required
 ========
