@@ -1,0 +1,40 @@
+/**
+ * JiS is “Image is a slider for a framework jQuery”.
+ *
+ * @author demorfi <demorfi@gmail.com>
+ * @version 1.0
+ * @source https://github.com/demorfi/jis
+ * @license http://opensource.org/licenses/MIT Licensed under MIT License
+ */
+
+*
+{
+    margin  : 0;
+    padding : 0;
+}
+
+body
+{
+    width      : 950px;
+    margin     : 100px auto 0;
+    background : url("data:image/gif;base64,R0lGODlhCAAIAJEAAMzMzP///////wAAACH5BAEHAAIALAAAAAAIAAgAAAINhG4nudroGJBRsYcxKAA7") #f1f1f1;
+}
+
+.jis-trigger:not(.jis-init),
+.jis-trigger:not(.jis-init) ~ .title:not(#build),
+.jis-wrapper ~ #build {
+    display: none;
+}
+
+.title
+{
+    color      : #8b8b8b;
+    font       : bold 12px Arial, Helvetica;
+    margin     : 5px 0;
+    text-align : right;
+}
+
+.title a
+{
+    color : #0080cf;
+}

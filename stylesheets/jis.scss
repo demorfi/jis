@@ -1,0 +1,214 @@
+/*!
+ * JiS is “Image is a slider for a framework jQuery”.
+ *
+ * @author demorfi <demorfi@gmail.com>
+ * @version 1.0
+ * @source https://github.com/demorfi/jis
+ * @license http://opensource.org/licenses/MIT Licensed under MIT License
+ */
+
+@import "compass/css3";
+
+// elements images slider
+$sprite : sprite-map("elements/*.png");
+
+// image loading animation
+$image-loading : "loading-white.gif";
+
+.jis-wrapper
+{
+  font     :
+  {
+    family : Arial, Helvetica;
+    size   : small;
+  }
+  position   : relative;
+  z-index    : 1;
+  border     : 1px solid rgba(0, 0, 0, .1);
+  padding    : 10px 10px 30px;
+  background : #fff;
+  box-shadow : 0 0 4px 0 rgba(0, 0, 0, .15);
+
+  img
+  {
+    border : none;
+  }
+
+  // slide list element page
+  ul
+  {
+    list-style : none;
+    margin     : 0;
+    padding    : 0;
+    width      : 100%;
+    overflow   : hidden;
+    outline    : 1px solid rgba(0, 0, 0, .15);
+    position   : relative;
+    z-index    : 1;
+    background : inline-image($image-loading) no-repeat 50% 50% #2C2C2C;
+
+    li
+    {
+      float    : left;
+      position : relative;
+      z-index  : 1;
+      display  : none;
+      width    : 100%;
+      height   : 100%;
+
+      a
+      {
+        position : relative;
+        display  : block;
+        left     : 0;
+        top      : 0;
+        right    : 0;
+        bottom   : 0;
+        z-index  : 2;
+      }
+
+      // show title slide
+      .jis-title
+      {
+        position    : relative;
+        z-index     : 3;
+        height      : 40px;
+        bottom      : 40px;
+        line-height : 40px;
+        padding     : 0 15px;
+        color       : #fff;
+        text-shadow : 0 1px #000;
+        background  : rgba(0, 0, 0, .6);
+        overflow    : hidden;
+        display     : none;
+      }
+
+      // active slide
+      &.jis-selected
+      {
+        display : block;
+
+        .jis-title
+        {
+          display : block;
+        }
+      }
+    }
+
+    // hide animate loading image
+    &.jis-loading
+    {
+      background : none;
+    }
+  }
+
+  // background sprite arrows
+  &.jis-slide-first:not(.jis-slide-recursion) .jis-direction-prev,
+  .jis-control .jis-control-list a,
+  .jis-direction .jis-direction-prev, %jis-direction-prev
+  {
+    background : inline-sprite($sprite) no-repeat;
+  }
+
+  // direction navigation arrows
+  .jis-direction
+  {
+    .jis-direction-prev,
+    %jis-direction-prev
+    {
+      position            : absolute;
+      height              : 42px;
+      width               : 30px;
+      top                 : 50%;
+      left                : -31px;
+      margin-top          : -21px;
+      z-index             : 3;
+      cursor              : pointer;
+      text-indent         : -9999px;
+      background-position : sprite-position($sprite, arrow-left);
+
+      @include transition(width .4s ease, left .4s ease);
+      &:hover,
+      &:focus
+      {
+        left  : -41px;
+        width : 40px;
+      }
+    }
+
+    .jis-direction-next
+    {
+      @extend %jis-direction-prev;
+      right               : -31px;
+      left                : auto;
+      background-position : sprite-position($sprite, arrow-right, -24px);
+
+      @include transition(width .4s ease, right .4s ease, background-position .4s ease);
+      &:hover,
+      &:focus
+      {
+        right               : -41px;
+        width               : 40px;
+        left                : auto;
+        background-position : sprite-position($sprite, arrow-right, -14px);
+      }
+    }
+  }
+
+  // control navigation
+  .jis-control
+  {
+    position : relative;
+    z-index  : 3;
+    height   : 30px;
+    bottom   : 0;
+    left     : 0;
+
+    .jis-control-list
+    {
+      display : table;
+      margin  : 0 auto;
+      padding : 10px 15px;
+
+      a
+      {
+        display             : inline-block;
+        border-radius       : 6px;
+        width               : 10px;
+        height              : 10px;
+        cursor              : pointer;
+        text-decoration     : none;
+        margin              : 0 10px;
+        text-indent         : -9999px;
+        background-position : sprite-position($sprite, pagination);
+
+        @include transition(background .4s ease);
+        &:hover,
+        &.jis-selected
+        {
+          background-position : sprite-position($sprite, pagination-selected);
+        }
+      }
+    }
+  }
+
+  // disable next arrow in last slide. Not enable recursion slide
+  &.jis-slide-last:not(.jis-slide-recursion) .jis-direction-next,
+  %jis-direction-next
+  {
+    opacity             : .5;
+    cursor              : default;
+    right               : -30px;
+    left                : auto;
+    width               : 30px;
+    background-position : sprite-position($sprite, arrow-right, -24px);
+  }
+
+  // disable prev arrow in first slide. Not enable recursion slide
+  &.jis-slide-first:not(.jis-slide-recursion) .jis-direction-prev
+  {
+    @extend %jis-direction-next;
+    left                : -30px;
+    background-position : sprite-position($sprite, arrow-left);
+  }
+}
