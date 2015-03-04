@@ -12,7 +12,7 @@
     /**
      * Initialize.
      *
-     * @param {object} options Available options
+     * @param {object} [options] Available options
      * @param {boolean} options.title Display title text
      * @param {string} options.effect Slides used effect [random, selectRandom, randomSlide, randomStrips, slideX, slideY, strips]
      * @param {int} options.row Count row in create table effect
@@ -65,7 +65,7 @@
      * Merge default setting.
      *
      * @param {object} el <ul> html element
-     * @param {object} options Available options
+     * @param {object} [options] Available options
      * @param {boolean} options.title Display title text
      * @param {string} options.effect Slides used effect
      * @param {int} options.row Count row in create table effect
