@@ -1,5 +1,5 @@
 /*!
- * JiS is “Image is a slider for a framework jQuery”.
+ * JiS is “Images slider for jQuery framework”.
  *
  * @author demorfi <demorfi@gmail.com>
  * @version 1.0
@@ -13,44 +13,44 @@
      * Initialize.
      *
      * @param {object} [options] Available options
-     * @param {boolean} options.title Display title text
-     * @param {string} options.effect Slides used effect [random, selectRandom, randomSlide, randomStrips, slideX, slideY, strips]
-     * @param {int} options.row Count row in create table effect
-     * @param {int} options.cell Count cell in create table effect
-     * @param {boolean} options.auto Auto scrolling slideshow
-     * @param {int} options.speed Speed scrolling slideshow
-     * @param {int} options.pause Pause before scrolling slideshow
-     * @param {boolean} options.pauseHover Stop scrolling slideshow in hover slide
-     * @param {boolean} options.recursion Recursive scrolling slideshow
-     * @param {int} options.start Start init slide
-     * @param {boolean} options.directionNav Display navigation arrows
-     * @param {boolean} options.controlNav Display navigation buttons
-     * @param {boolean} options.random Start random init slide
-     * @param {string} options.nextText Text navigation arrow next
-     * @param {string} options.prevText Text navigation arrow prev
-     * @param {string} options.width Set the width of the slider
-     * @param {string} options.height Set the height of the slider
-     * @param {object} options.callback Callback functions
-     * @param {function} options.callback.init Callback init slider
-     * @param {function} options.callback.before Callback for up to the next slide
-     * @param {function} options.callback.after Callback for up to the prev slide
-     * @param {function} options.callback.last Callback when the last slide
-     * @param {function} options.callback.first Callback when the first slide
-     * @param {function} options.animate.title Animate title show slide
-     * @param {object} options.class Used css class list
-     * @param {string} options.class.wrapper Use class for element jis-wrapper
-     * @param {string} options.class.title Use class for element jis-title
-     * @param {string} options.class.direction Use class for element jis-direction
-     * @param {string} options.class.directionNext Use class for element jis-direction-next
-     * @param {string} options.class.directionPrev Use class for element jis-direction-prev
-     * @param {string} options.class.control Use class for element jis-control
-     * @param {string} options.class.controlList Use class for element jis-control-list
-     * @param {string} options.class.selected Use class for element jis-selected
-     * @param {string} options.class.init Use class for element jis-init
-     * @param {string} options.class.loading Use class for element jis-loading
-     * @param {string} options.class.last Use class for element jis-slide-last
-     * @param {string} options.class.first Use class for element jis-slide-first
-     * @param {string} options.class.recursion Use class for element jis-slide-recursion
+     * @param {boolean} [options.title] Display title text
+     * @param {string} [options.effect] Slides used effect [random, selectRandom, randomSlide, randomStrips, slideX, slideY, strips]
+     * @param {int} [options.row] Count row in create table effect
+     * @param {int} [options.cell] Count cell in create table effect
+     * @param {boolean} [options.auto] Auto scrolling slideshow
+     * @param {int} [options.speed] Speed scrolling slideshow
+     * @param {int} [options.pause] Pause before scrolling slideshow
+     * @param {boolean} [options.pauseHover] Stop scrolling slideshow in hover slide
+     * @param {boolean} [options.recursion] Recursive scrolling slideshow
+     * @param {int} [options.start] Start init slide
+     * @param {boolean} [options.directionNav] Display navigation arrows
+     * @param {boolean} [options.controlNav] Display navigation buttons
+     * @param {boolean} [options.random] Start random init slide
+     * @param {string} [options.nextText] Text navigation arrow next
+     * @param {string} [options.prevText] Text navigation arrow prev
+     * @param {string} [options.width] Set the width of the slider
+     * @param {string} [options.height] Set the height of the slider
+     * @param {object} [options.callback] Callback functions
+     * @param {function} [options.callback.init] Callback init slider
+     * @param {function} [options.callback.before] Callback for up to the next slide
+     * @param {function} [options.callback.after] Callback for up to the prev slide
+     * @param {function} [options.callback.last] Callback when the last slide
+     * @param {function} [options.callback.first] Callback when the first slide
+     * @param {function} [options.animate.title] Animate title show slide
+     * @param {object} [options.class] Used css class list
+     * @param {string} [options.class.wrapper] Use class for element jis-wrapper
+     * @param {string} [options.class.title] Use class for element jis-title
+     * @param {string} [options.class.direction] Use class for element jis-direction
+     * @param {string} [options.class.directionNext] Use class for element jis-direction-next
+     * @param {string} [options.class.directionPrev] Use class for element jis-direction-prev
+     * @param {string} [options.class.control] Use class for element jis-control
+     * @param {string} [options.class.controlList] Use class for element jis-control-list
+     * @param {string} [options.class.selected] Use class for element jis-selected
+     * @param {string} [options.class.init] Use class for element jis-init
+     * @param {string} [options.class.loading] Use class for element jis-loading
+     * @param {string} [options.class.last] Use class for element jis-slide-last
+     * @param {string} [options.class.first] Use class for element jis-slide-first
+     * @param {string} [options.class.recursion] Use class for element jis-slide-recursion
      * @return {object} jis
      */
     $.fn.jis = function (options)
@@ -66,44 +66,44 @@
      *
      * @param {object} el <ul> html element
      * @param {object} [options] Available options
-     * @param {boolean} options.title Display title text
-     * @param {string} options.effect Slides used effect
-     * @param {int} options.row Count row in create table effect
-     * @param {int} options.cell Count cell in create table effect
-     * @param {boolean} options.auto Auto scrolling slideshow
-     * @param {int} options.speed Speed scrolling slideshow
-     * @param {int} options.pause Pause before scrolling slideshow
-     * @param {boolean} options.pauseHover Stop scrolling slideshow in hover slide
-     * @param {boolean} options.recursion Recursive scrolling slideshow
-     * @param {int} options.start Start init slide
-     * @param {boolean} options.directionNav Display navigation arrows
-     * @param {boolean} options.controlNav Display navigation buttons
-     * @param {boolean} options.random Start random init slide
-     * @param {string} options.nextText Text navigation arrow next
-     * @param {string} options.prevText Text navigation arrow prev
-     * @param {string} options.width Set the width of the slider
-     * @param {string} options.height Set the height of the slider
-     * @param {object} options.callback Callback functions
-     * @param {function} options.callback.init Callback init slider
-     * @param {function} options.callback.before Callback for up to the next slide
-     * @param {function} options.callback.after Callback for up to the prev slide
-     * @param {function} options.callback.last Callback when the last slide
-     * @param {function} options.callback.first Callback when the first slide
-     * @param {function} options.animate.title Animate title show slide
-     * @param {object} options.class Used css class list
-     * @param {string} options.class.wrapper Use class for element jis-wrapper
-     * @param {string} options.class.title Use class for element jis-title
-     * @param {string} options.class.direction Use class for element jis-direction
-     * @param {string} options.class.directionNext Use class for element jis-direction-next
-     * @param {string} options.class.directionPrev Use class for element jis-direction-prev
-     * @param {string} options.class.control Use class for element jis-control
-     * @param {string} options.class.controlList Use class for element jis-control-list
-     * @param {string} options.class.selected Use class for element jis-selected
-     * @param {string} options.class.init Use class for element jis-init
-     * @param {string} options.class.loading Use class for element jis-loading
-     * @param {string} options.class.last Use class for element jis-slide-last
-     * @param {string} options.class.first Use class for element jis-slide-first
-     * @param {string} options.class.recursion Use class for element jis-slide-recursion
+     * @param {boolean} [options.title] Display title text
+     * @param {string} [options.effect] Slides used effect
+     * @param {int} [options.row] Count row in create table effect
+     * @param {int} [options.cell] Count cell in create table effect
+     * @param {boolean} [options.auto] Auto scrolling slideshow
+     * @param {int} [options.speed] Speed scrolling slideshow
+     * @param {int} [options.pause] Pause before scrolling slideshow
+     * @param {boolean} [options.pauseHover] Stop scrolling slideshow in hover slide
+     * @param {boolean} [options.recursion] Recursive scrolling slideshow
+     * @param {int} [options.start] Start init slide
+     * @param {boolean} [options.directionNav] Display navigation arrows
+     * @param {boolean} [options.controlNav] Display navigation buttons
+     * @param {boolean} [options.random] Start random init slide
+     * @param {string} [options.nextText] Text navigation arrow next
+     * @param {string} [options.prevText] Text navigation arrow prev
+     * @param {string} [options.width] Set the width of the slider
+     * @param {string} [options.height] Set the height of the slider
+     * @param {object} [options.callback] Callback functions
+     * @param {function} [options.callback.init] Callback init slider
+     * @param {function} [options.callback.before] Callback for up to the next slide
+     * @param {function} [options.callback.after] Callback for up to the prev slide
+     * @param {function} [options.callback.last] Callback when the last slide
+     * @param {function} [options.callback.first] Callback when the first slide
+     * @param {function} [options.animate.title] Animate title show slide
+     * @param {object} [options.class] Used css class list
+     * @param {string} [options.class.wrapper] Use class for element jis-wrapper
+     * @param {string} [options.class.title] Use class for element jis-title
+     * @param {string} [options.class.direction] Use class for element jis-direction
+     * @param {string} [options.class.directionNext] Use class for element jis-direction-next
+     * @param {string} [options.class.directionPrev] Use class for element jis-direction-prev
+     * @param {string} [options.class.control] Use class for element jis-control
+     * @param {string} [options.class.controlList] Use class for element jis-control-list
+     * @param {string} [options.class.selected] Use class for element jis-selected
+     * @param {string} [options.class.init] Use class for element jis-init
+     * @param {string} [options.class.loading] Use class for element jis-loading
+     * @param {string} [options.class.last] Use class for element jis-slide-last
+     * @param {string} [options.class.first] Use class for element jis-slide-first
+     * @param {string} [options.class.recursion] Use class for element jis-slide-recursion
      * @private
      * @constructor
      * @return {object} this
@@ -256,7 +256,6 @@
                 // initialize auto scrolling slideshow
                 $self.getOption('auto') && $self.actionStart(this);
 
-                // init callback
                 $self.getCallback('init').call($self, this);
             });
 
@@ -565,8 +564,6 @@
                     // current effect animate
                     var effect = this.getEffect();
                     if ($.isFunction(effect)) {
-
-                        // callback before
                         this.getCallback('before').call(this, slider, current, next, trigger);
 
                         // change name for index navigation
@@ -620,14 +617,12 @@
 
                             // called trigger function
                             $.isFunction(trigger) && trigger.call(this, slider, current, prev);
-
-                            // callback after
                             this.getCallback('after').call(this, slider, prev, current, trigger);
 
-                            // Callback first
+                            // first callback
                             (index < 1) && this.getCallback('first').call(this, slider, prev, current, trigger);
 
-                            // callback last
+                            // last callback
                             (index >= (count - 1)) && this.getCallback('last')
                                 .call(this, slider, prev, current, trigger);
 
