@@ -467,7 +467,7 @@
             if (!$(slider).data('interval')) {
                 $(slider).data('interval', setInterval($.proxy(function (slider)
                 {
-                    if (!$(slider).data('slideHover')) {
+                    if (!$(slider).data('slideHover') && !$(slider).data('slideAnimate')) {
                         $(slider).parent().find(this.getClass('directionNext', true)).trigger('click.jisDirectionNext');
                     }
 
@@ -627,6 +627,11 @@
                                 .call(this, slider, prev, current, trigger);
 
                             $(slider).removeData('slideAnimate');
+
+                            // reload auto change slide
+                            this.actionStop(slider);
+                            this.actionStart(slider);
+
                         }, this, slider, current, next, trigger), this.getOption('speed'));
                     }
                 }
