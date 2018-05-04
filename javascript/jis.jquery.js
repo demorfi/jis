@@ -483,7 +483,10 @@
          */
         actionStop: function (slider)
         {
-            $(slider).data('interval') && clearInterval($(slider).data('interval'));
+            if ($(slider).data('interval')) {
+				clearInterval($(slider).data('interval'));
+				$(slider).removeData('interval');
+			}
         },
 
         /**
